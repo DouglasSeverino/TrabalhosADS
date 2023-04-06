@@ -2,24 +2,20 @@
 cliente = []
 
 def cliente_novo():
-    print("Seja bem-vindo! Estamos muito felizes em ser escolhido por você!"
+    print("\nSeja bem-vindo! Estamos muito felizes em ser escolhido por você!"
           + "\nPrecisamos pegar algumas informações para poder entrar em contato."
           + "\nApenas duas coisas e ligaremos o mais rápido possível!")
     nome = str(input("Digite seu nome: "))
     telefone = str(input("Digite o número do teu telefone com DDD: "))
     cliente.append({nome, telefone})
-    print("\nObrigado! Fique de olho no celular, pois ligaremos nos próximos minutos.")
-
-
 
 def cliente_empotencial():
-    print("\nDeseja fechar o orçamento conosco? Somos a melhor empresa de limpeza da região,"
+    print("\nDeseja fechar o orçamento conosco? \nSomos a melhor empresa de limpeza da região,"
           + "\nbuscamos eficácia e excelência em nosso trabalho.")
-    decisao = int(input("Digite '1' para SIM para fechar o contrato ou '0' para NÃO para encerrar o programa. "))
+    decisao = int(input("Digite '1' para SIM para fechar o contrato \nou '0' para NÃO para encerrar o programa. "))
     if  decisao == 1:
-        print("Perfeito! Ligaremos o mais rápido possível para definir a data, hora e o local."
-              + "\nÉ um prazer fechar este negócio com você.")
         cliente_novo()
+        print("\nObrigado! Fique de olho no celular, pois ligaremos nos próximos minutos.")
     elif decisao == 0:
                 print("Obrigado pela sua visita. Volte sempre!")
                 return
@@ -51,10 +47,9 @@ def orcamento():    # Função de Orçamento de Valores
 
     while True:
         try:       # Bloco de verificação de tipo de limpeza
-            lpz = input('\n>> Temos o tipo de limpeza Básica (B), que é indicada para sujeiras semanais'
-                        ' ou quinzenais,'
-                        '\nou Completa (C), que é indicada para sujeiras antigas e/ou não rotineiras.'
-                        '\nQual é o tipo de limpeza? [ B | C ]: ')
+            lpz = input('\n>> Temos o tipo de limpeza Básica (B), que é indicada \npara sujeiras semanais'
+                        ' ou quinzenais, ou Completa (C), \nque é indicada para sujeiras antigas e/ou não rotineiras.'
+                        '\n\nQual é o tipo de limpeza? [ B | C ]: ')
             limpeza = lpz.upper()
             if limpeza == 'B':
                 lvalor += 1
@@ -65,7 +60,7 @@ def orcamento():    # Função de Orçamento de Valores
                 print('Você selecionou a Limpeza Completa.')
                 break
             else:
-                print('Opção inválida. Apenas B para Básica ou C para Completa. Tente novamente...\n')
+                print('Opção inválida. Apenas B para Básica \nou C para Completa. Tente novamente...\n')
                 continue
         except ValueError:
             print('Opção inválida. Tente novamente...')
@@ -104,5 +99,6 @@ def orcamento():    # Função de Orçamento de Valores
           '\nMetragem: {:.2f} * Tipo de Limpeza: {} + Adicional: {:.2f}'.format(total, lvalor, mvalor, avalor))
     cliente_empotencial()
 
-print("*--- Boas vindas a DS Serviços de Limpeza LTDA ---*")
+print("*--------------- Boas vindas a DS Serviços de Limpeza LTDA ---------------*")
 orcamento()  # Início do programa
+print("*-------------------------------------------------------------------------*")
